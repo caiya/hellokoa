@@ -10,35 +10,146 @@
     <script type="text/javascript" src="/plugin/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="/plugin/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js"></script>
     <style>
-        .top{ background:url(/images/top.jpg) repeat-x; height:78px; position:relative;}
-        .top .title{ font-size:18px; color:#fff; font-family:\5FAE\8F6F\96C5\9ED1; position:absolute; left:20px; top:26px;}
-        .top .out{ position:absolute; top:30px; right:20px; font-size:12px; color:#fff;}
-        .top .out a{ color:#fff; text-decoration:none;}
-        .panel-body{
+        .top {
+            background: url(/images/top.jpg) repeat-x;
+            height: 78px;
+            position: relative;
+        }
+
+        .top .title {
+            font-size: 18px;
+            color: #fff;
+            font-family: \5FAE\8F6F\96C5\9ED1;
+            position: absolute;
+            left: 20px;
+            top: 26px;
+        }
+
+        .top .out {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .top .out a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .panel-body {
             overflow: hidden;
         }
-        *{ margin:0px; padding:0px; list-style:none;font-size: 12px;font-family: 宋体;}
-        .line20{ clear:both; font-size:0px; height:20px; overflow:hidden; }
-        .nlist-1 {line-height: 45px;color: #444;font-size: 14px}
-        .nlist-1 ul {padding: 0 0 0 20px;overflow:hidden;}
-        .nlist-1 ul:after {clear: both;content: ".";display: block;height: 0;visibility: hidden}
-        .nlist-1 ul li {float: left;margin-right: 10px;width: 32%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-        .nlist-2 {line-height: 30px;border: 1px solid #ebebeb;color: #444;font-size: 14px;}
-        .nlist-2 h3 {margin: 0;padding: 0 0 0 20px;font-size: 12px;font-weight: bold;color: #333;line-height: 34px;height: 34px}
-        .nlist-2 h3 i {display: inline-block;margin-right: 3px;width: 14px;height: 16px;vertical-align: middle;background: url(/images/skin_icons.png) -56px -112px no-repeat;overflow: hidden}
-        .nlist-2 ul {padding: 0 0 10px 20px;overflow:hidden;}
-        .nlist-2 p{ padding-left:20px;}
-        .nlist-2 ul:after {clear: both;content: ".";display: block;height: 0;visibility: hidden}
-        .nlist-2 ul li {float: left;margin-right: 10px;width: 32%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis}
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 12px;
+            font-family: 宋体;
+        }
+
+        .line20 {
+            clear: both;
+            font-size: 0px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .nlist-1 {
+            line-height: 45px;
+            color: #444;
+            font-size: 14px
+        }
+
+        .nlist-1 ul {
+            padding: 0 0 0 20px;
+            overflow: hidden;
+        }
+
+        .nlist-1 ul:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden
+        }
+
+        .nlist-1 ul li {
+            float: left;
+            margin-right: 10px;
+            width: 32%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .nlist-2 {
+            line-height: 30px;
+            border: 1px solid #ebebeb;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .nlist-2 h3 {
+            margin: 0;
+            padding: 0 0 0 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #333;
+            line-height: 34px;
+            height: 34px
+        }
+
+        .nlist-2 h3 i {
+            display: inline-block;
+            margin-right: 3px;
+            width: 14px;
+            height: 16px;
+            vertical-align: middle;
+            background: url(/images/skin_icons.png) -56px -112px no-repeat;
+            overflow: hidden
+        }
+
+        .nlist-2 ul {
+            padding: 0 0 10px 20px;
+            overflow: hidden;
+        }
+
+        .nlist-2 p {
+            padding-left: 20px;
+        }
+
+        .nlist-2 ul:after {
+            clear: both;
+            content: ".";
+            display: block;
+            height: 0;
+            visibility: hidden
+        }
+
+        .nlist-2 ul li {
+            float: left;
+            margin-right: 10px;
+            width: 32%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
         a:link {
             text-decoration: none;
         }
+
         a:visited {
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: none;
         }
+
         a:active {
             text-decoration: none;
         }
@@ -101,10 +212,10 @@
 <div region="west" style="width:200px; overflow-y:auto; overflow-x:auto;;height: 500px" title="导航菜单" split="true">
     <div class="easyui-accordion" data-options="fit:true,border:false">
         <div title="系统设置" data-options="iconCls:'icon-wrench'" style="padding:10px">
-            <a href="javascript:openTab('用户管理','/','icon-user_home')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-user_home'">用户管理</a><br/>
+            <a href="javascript:openTab('用户管理','/users','icon-user_home')" class="easyui-linkbutton"
+               data-options="plain:true,iconCls:'icon-user_home'">用户管理</a><br/>
         </div>
     </div>
-</div>
 </div>
 </body>
 </html>
