@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/koaApp.iml" filepath="$PROJECT_DIR$/.idea/koaApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/hellokoa.iml" filepath="$PROJECT_DIR$/.idea/hellokoa.iml" />
     </modules>
   </component>
 </project>
