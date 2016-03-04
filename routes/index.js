@@ -1,12 +1,10 @@
 var router = require('koa-router')();
+var dbHelper = require("../utils/dbHelper");
 
 router.get('/', function *(next) {
 
-    yield this.render('index', {
-        title: "koa express",
-        data: [{id: 1, name: "admin"}, {id: 2, name: "user"}]
-    });
-
+    //var data = dbHelper.querySql("");
+    yield this.render('index');
 });
 
 
